@@ -28,7 +28,7 @@ vero.heartbeat(function(error, response){
   }
 });
 
-vero.users.track('test@test.com', 'test@test.com', function(error, response){
+vero.users.track('test@test.com', 'test@test.com', {"custom_key": "custom_value"}, function(error, response){
   if (response.ok) {
     console.log('users.track::Success>', response.body.message);
   } else {
@@ -77,7 +77,7 @@ vero.users.resubscribe('test@test.com', function(error, response){
 });
 
 
-vero.events.track('test@test.com', null, "Test_Event", function(error, response){
+vero.events.track('test@test.com', null, "Event_Name", "Event_Data", function(error, response){
   if (response.ok) {
     console.log('events.track::Success>', response.body.message);
   } else {
